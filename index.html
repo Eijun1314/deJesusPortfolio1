@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Navbar */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #18006d;
+            color: #fc8f00;
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgb(0, 255, 234);
+        }
+
+        #navbar a {
+            color: #00f870;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #navbar a:hover {
+            color: #cbf800;
+            transition: color 0.3s;
+        }
+
+        /* Welcome Section */
+        #welcome-section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #3802fcf1, #feb47b);
+            color: #c5fc00;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #welcome-section h1 {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: slideIn 1s ease-out;
+        }
+
+        #welcome-section p {
+            font-size: 1.3rem;
+            color: #c5fc00;
+            animation: fadeIn 1.5s ease-in-out;
+            animation-delay: 0.5s;
+            max-width: 80%;
+            margin: 10px auto;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 119, 179, 0.637), rgba(1, 173, 9, 0.7)), url('https://via.placeholder.com/1500') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            
+        }
+
+        #projects h2 {
+            font-size: 3rem;
+            color: #fff;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .project-tile {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            margin: 20px auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 450px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0.9;
+            backdrop-filter: blur(5px);
+        }
+
+        .project-tile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .project-tile h3 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .project-tile p {
+            font-size: 1rem;
+            color: #ccc;
+            margin-top: 10px;;
+        }
+
+        .project-tile a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+
+        }
+
+        .project-tile a:hover {
+            color: #ecf0f1;
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f06, #4a90e2);
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-top: 10px;
+        }
+
+        #contact a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            text-decoration: underline;
+            background-color: #fbff00;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideIn {
+        0% {
+            transform: translateY(-50px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+        #navbar {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #welcome-section h1 {
+            font-size: 3rem;
+        }
+
+        #projects h2 {
+            font-size: 2rem;
+        }
+
+        #contact h2 {
+            font-size: 2rem;
+        }
+
+        .project-tile {
+            width: 90%;
+            max-width: 350px;
+        }
+    }
+</style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="#welcome-section">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Welcome Section -->
+    <section id="welcome-section">
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hello! I'm Jhune Andrew de Jesus Let me show you my work!</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+            <div class="project-tile">
+            <h3>CatPhotoApp</h3>
+            <p>PLS CLICK THE LINK</p>
+            <p>👇🏼</p>
+            <a href="1CatPhotoApp.html" target="_blank">View Project</a>
+        </div>
+
+
+            <div class="project-tile">
+                <h3>CafeMenu</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="2CafeMenu.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Set of Colored Markers</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="3SetofColoredMarkers.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Registration Form</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="4RegistrationForm.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Survey Form</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="5CP-Surveyform.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Rothko Painting</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="6RothkoPainting.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Photo Gallery</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="7PhotoGallery.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Nutrition Label</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="8NutritionLabel.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Quiz</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="9Quiz.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Tribute Page</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="10CP-TributePage.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Blance Sheet</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="11BlanceSheet.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Cat Painting</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="12CatPainting.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Piano</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="13Piano.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Technical Documentation</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="14CP-TechnicalDocumentation.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>City SkyLine</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="15CitySkyline.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Magazine</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="16Magazine.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Landing Page</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="17CP-LandingPage.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Ferris Wheel</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="18FerrisWheel.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>Penguin</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="19Penguin.html" target="_blank">View Project</a>
+            </div>
+
+            
+            <div class="project-tile">
+                <h3>EduNews</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="20EduNews.html" target="_blank">View Project</a>
+            </div>
+        </ul>
+        
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>If you would like to get in touch with me, feel free to send me an email or visit my GitHub profile.</p>
+        <p>Email: <a href="mailto:your-email@example.com">anjodejesus14@gmail.com</a></p>
+        <p>GitHub: <a href="https://github.com/your-profile" target="_blank">Visit My GitHub</a></p>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Made with ❤️ by Yours Truly Drew</p>
+    </footer>
+</body>
+
+</html>
