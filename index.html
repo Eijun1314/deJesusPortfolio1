@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <style>
-        
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +27,7 @@
             gap: 20px;
         }
 
-        
+        /* Navbar */
         #navbar {
             position: fixed;
             top: 0;
@@ -56,7 +56,7 @@
             transition: color 0.3s;
         }
 
-      
+        /* Welcome Section */
         #welcome-section {
             height: 100vh;
             display: flex;
@@ -88,7 +88,7 @@
             margin: 10px auto;
         }
 
-        
+        /* Animations */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -111,7 +111,7 @@
             }
         }
 
-        
+        /* Projects Section */
         #projects {
             padding: 80px 20px;
             background: linear-gradient(135deg, rgba(0, 119, 179, 0.637), rgba(1, 173, 9, 0.7)), url('https://via.placeholder.com/1500') no-repeat center center;
@@ -183,7 +183,7 @@
             text-decoration: underline;
         }
 
-        
+        /* Contact Section */
         #contact {
             padding: 60px 20px;
             background: linear-gradient(135deg, #f06, #4a90e2);
@@ -244,7 +244,7 @@
     }
 
 
-        
+        /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
         #navbar {
             flex-direction: column;
@@ -267,24 +267,29 @@
             width: 90%;
             max-width: 350px;
         }
+        .selection{
+            display: flex;
+            justify-content: center;
+        }
     }
 </style>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav id="navbar">
         <a href="#welcome-section">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    
+    <!-- Welcome Section -->
     <section id="welcome-section">
         <h1>Welcome to My Portfolio</h1>
         <p>Hello! I'm Jhune Andrew de Jesus Let me show you my work!</p>
     </section>
 
-    
+    <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
         <ul>
@@ -293,7 +298,7 @@
             <p>PLS CLICK THE LINK</p>
             <p>👇🏼</p>
             <a href="1CatPhotoApp.html" target="_blank">View Project</a>
-        </div>
+        </div>  
 
 
             <div class="project-tile">
@@ -429,19 +434,72 @@
                 <p>👇🏼</p>
                 <a href="20EduNews.html" target="_blank">View Project</a>
             </div>
+
+            <div class="project-tile">
+                <h3>Pyramid</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="21Pyramid.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>GradeBook</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="22GradeBook.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>RolePlayingGame</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="23RolePlayingGame.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>BackGroundChanger</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="24BackGroundChanger.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>CalorieCounter</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="25CalorieCounter.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>RockPaperScissorsGame</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="26RockPaperScissorsGame.html" target="_blank">View Project</a>
+            </div>
+
+            <div class="project-tile">
+                <h3>MusicPlayer</h3>
+                <p>PLS CLICK THE LINK</p>
+                <p>👇🏼</p>
+                <a href="27MusicPlayer.html" target="_blank">View Project</a>
+            </div>
         </ul>
         
     </section>
 
-   
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
         <p>If you would like to get in touch with me, feel free to send me an email or visit my GitHub profile.</p>
         <p>Email: <a href="mailto:your-email@example.com">anjodejesus14@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/your-profile" target="_blank">Visit My GitHub</a></p>
     </section>
-
+    <section id="contact">
+       <img src="Screenshot 2025-04-10 121418.jpg" alt="certificate">
+    </section>
     
+
+    <!-- Footer Section -->
     <footer>
         <p>Made with ❤️ by Yours Truly Drew</p>
     </footer>
